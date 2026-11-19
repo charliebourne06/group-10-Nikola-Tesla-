@@ -23,26 +23,40 @@ function TextBoxPage() {
         backgroundRepeat: "no-repeat",
         minHeight: "100vh",
         margin: 0,
+        padding: "36px 48px",
         display: "flex",
-        justifyContent: "center", // centers horizontally
-        alignItems: "center"      // centers vertically
+        justifyContent: "flex-end",
+        alignItems: "center"
       }
     },
     React.createElement(
       "form",
       {
-        style: {
+
+         style: {
+          width: "58%",
+          maxWidth: "780px",
+          minWidth: "360px",
+          height: "66vh",
+          minHeight: "420px",
+          padding: "20px",
+          backgroundColor: "rgba(10, 28, 58, 0.65)",
+          border: "2px solid #29b6f6",
+          borderRadius: "20px",
           display: "flex",
-          gap: "10px" // adds a small space between the input and button
+          alignItems: "flex-end",
+          gap: "12px"
         }
+        
       },
       React.createElement("input", {
         type: "text",
         placeholder: "Type your message...",
         style: {
-          padding: "10px 14px",
-          fontSize: "16px",
-          width: "300px"
+          flex: 1,
+          height: "48px",
+          padding: "0 18px",
+          fontSize: "15px"
         }
       }),
       React.createElement(
@@ -50,8 +64,9 @@ function TextBoxPage() {
         {
           type: "submit",
           style: {
-            padding: "10px 18px",
-            fontSize: "16px",
+            height: "48px",
+            padding: "0 20px",
+            fontSize: "15px",
             cursor: "pointer"
           }
         },
