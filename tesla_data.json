@@ -1,21 +1,20 @@
-
 [
     {
         "id": 1,
         "type": "greeting",
-        "text": "Greetings,",
+        "text": "Greetings! I am Nikola Tesla. Ask me about my name, my age, or my work.",
         "probability": 0.15
     },
     {
         "id": 2,
         "type": "greeting",
-        "text": "Welcome",
+        "text": "Welcome, my friend. I am Nikola Tesla. What would you like to know?",
         "probability": 0.15
     },
     {
         "id": 3,
         "type": "greeting",
-        "text": "Good day,",
+        "text": "Good day. I am Nikola Tesla. What would you like to know?",
         "probability": 0.15
     },
     {
@@ -24,163 +23,156 @@
         "text": "insert line of text here",
         "probability": 0.15
     },
-
     {
         "id": 5,
         "type": "greeting",
         "text": "insert line of text here",
         "probability": 0.15
     },
-    {   
-        "id":6,
+    {
+        "id": 6,
         "type": "response",
-        "topics":"name",
-        "text": "You inquired about my name, I am Nikola Tesla",
-        "probability": 0.15 
-    },
-    {   
-        "id": 7,
-        "type": "response",
-        "topics":"name",
-        "text": "I am Nikola Tesla",
-        "probability": 0.15 
-    },
-    {   
-        "id": 8,
-        "type": "response",
-        "topics":"age",
-        "text": "I lived to be 86 years old, but if I were alive today, I would be 168 years old",
-        "probability": 0.15 
-    },
-    {   
-        "id": 9,
-        "type": "response",
-        "topics":"age",
-        "text": "I was born on July 10, 1856, and passed away on January 7, 1943, living to be 86 years old",
-        "probability": 0.15 
-    },
-
-    {   
-        "id": 10,
-        "type": "response",
-        "topics":"birth date",
-        "text": "I was born on July 10, 1856, and passed away on January 7, 1943.",
-        "probability": 0.15 
-    },
-
-    {   
-        "id": 11,
-        "type": "response",
-        "topics":"",
-        "text": "",
-        "probability": 0.15 
-    },
-
-    {   
-        "id": 12,
-        "type": "response",
-        "topics":"",
-        "text": "insert line of text here",
-        "probability": 0.15 
+        "topics": "name",
+        "text": "You inquired about my name, I am Nikola Tesla.",
+        "probability": 0.15
     },
     {
-        "id": 13,  
-        "type":"farewell", 
+        "id": 7,
+        "type": "response",
+        "topics": "name",
+        "text": "I am Nikola Tesla.",
+        "probability": 0.15
+    },
+    {
+        "id": 8,
+        "type": "response",
+        "topics": "age",
+        "text": "I lived to be 86 years old, but if I were alive today, I would be {ageIfAlive} years old.",
+        "probability": 0.15
+    },
+    {
+        "id": 9,
+        "type": "response",
+        "topics": "age",
+        "text": "I was born on July 10, 1856, and passed away on January 7, 1943, living to be 86 years old.",
+        "probability": 0.15
+    },
+    {
+        "id": 10,
+        "type": "response",
+        "topics": "birth date",
+        "text": "I was born on July 10, 1856, and passed away on January 7, 1943.",
+        "probability": 0.15
+    },
+    {
+        "id": 11,
+        "type": "response",
+        "topics": "",
+        "text": "",
+        "probability": 0.15
+    },
+    {
+        "id": 12,
+        "type": "response",
+        "topics": "",
+        "text": "insert line of text here",
+        "probability": 0.15
+    },
+    {
+        "id": 13,
+        "type": "farewell",
         "text": "insert line of text here",
         "probability": 0.15
     },
     {
         "id": 14,
-        "type":"farewell" ,
+        "type": "farewell",
         "text": "insert line of text here",
         "probability": 0.15
     },
-
-
     {
         "id": 15,
-        "type":"prompts", 
-        "text": "I am delighted by your question but I must ask, what made you ask it and would you like to know anthing else?",
+        "type": "prompts",
+        "text": "I am delighted by your question, but I must ask: what made you ask it, and would you like to know anything else?",
         "probability": 0.15
     },
     {
         "id": 16,
-        "type":"prompts", 
-        "text": "hmm, I have always thought the number 3 and multiples of it were",
+        "type": "prompts",
+        "text": "Hmm, I am not certain I follow. I have always found the number 3 and its multiples to be of great significance. Perhaps ask me about my name, my age, or my birth date?",
         "probability": 0.15
     },
     {
         "id": 17,
-        "type":"prompts", 
+        "type": "prompts",
         "text": "insert line of text here",
         "probability": 0.15
     },
     {
         "id": 18,
-        "type":"prompts", 
+        "type": "prompts",
         "text": "insert line of text here",
         "probability": 0.15
     },
     {
         "id": 19,
-        "type":"prompts",
+        "type": "prompts",
         "text": "insert line of text here",
         "probability": 0.15
     },
     {
         "id": 20,
-        "type":"prompts",
+        "type": "prompts",
         "text": "insert line of text here",
         "probability": 0.15
     },
-
     {
         "id": 21,
-        "type":"personality",
-        "topics":"fuck",
-        "text": "listen, I do not tolerate this kind of behaviour or foul language. I humbly request that you attempt to get your point across without such vocabulary.",
+        "type": "personality",
+        "topics": "fuck",
+        "text": "Listen, I do not tolerate this kind of behaviour or foul language. I humbly request that you attempt to get your point across without such vocabulary.",
         "probability": 0.15
     },
     {
         "id": 22,
-        "type":"personality",
-        "topics":"fuck you",
+        "type": "personality",
+        "topics": "fuck you",
         "text": "I must say, your use of foul language is mildly disturbing. I must request that you stop this at once.",
         "probability": 0.15
     },
     {
         "id": 23,
         "type": "personality",
-        "topics":"numbers",
-        "text": "With this talk of numbers, i have prefrences when it comes to certain numbers. I personally favour the number 3, but any of it's multiples would work too",
-        "probability": 0.15 
+        "topics": "numbers",
+        "text": "With this talk of numbers, I have preferences when it comes to certain numbers. I personally favour the number 3, but any of its multiples would work too.",
+        "probability": 0.15
     },
     {
         "id": 24,
         "type": "personality",
-        "topics":"3",
+        "topics": "3",
         "text": "",
-        "probability": 0.15 
+        "probability": 0.15
     },
     {
         "id": 25,
         "type": "personality",
-        "topics":"",
+        "topics": "",
         "text": "",
-        "probability": 0.15 
+        "probability": 0.15
     },
     {
         "id": 26,
         "type": "personality",
-        "topics":"",
+        "topics": "",
         "text": "",
-        "probability": 0.15 
+        "probability": 0.15
     },
     {
         "id": 27,
         "type": "personality",
-        "topics":"",
+        "topics": "",
         "text": "",
-        "probability": 0.15 
+        "probability": 0.15
     }
 ]

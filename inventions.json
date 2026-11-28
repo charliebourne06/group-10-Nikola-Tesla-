@@ -1,0 +1,35 @@
+[
+  {
+    "id": "inventions",
+    "type": "response",
+    "label": "What did you invent?",
+    "keywords": ["invent*", "patent*", "inventor", "discover*", "achievement*", "accomplish*"],
+    "responses": [
+      "My best-known work includes the alternating-current induction motor and polyphase power systems, the Tesla coil, and early experiments in wireless transmission."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["tesla-coil", "wardenclyffe"]
+  },
+  {
+    "id": "tesla-coil",
+    "type": "response",
+    "label": "What is the Tesla coil?",
+    "keywords": ["tesla coil", "coil", "resonant transformer", "high voltage"],
+    "responses": [
+      "In 1891 I developed the Tesla coil, a resonant transformer that produces very high voltages at high frequencies. I used it in my experiments with lighting and wireless transmission, and it is still built today."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["wardenclyffe", "inventions"]
+  },
+  {
+    "id": "wardenclyffe",
+    "type": "response",
+    "label": "What was Wardenclyffe?",
+    "keywords": ["wardenclyffe", "wireless", "tower", "long island"],
+    "responses": [
+      "Wardenclyffe was my laboratory and tower on Long Island, begun around 1901. I hoped to transmit information and power through the earth without wires, but funding ran short and the project was never completed."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["tesla-coil", "america"]
+  }
+]
