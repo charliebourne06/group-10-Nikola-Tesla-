@@ -1,0 +1,277 @@
+[
+  {
+    "sender": "tesla",
+    "text": "Greetings! I am Nikola Tesla. What would you like to know?",
+    "nodeId": "greeting",
+    "followUps": [
+      {
+        "id": "name",
+        "label": "Who are you?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      },
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      }
+    ],
+    "source": null
+  },
+  {
+    "sender": "user",
+    "text": "hi"
+  },
+  {
+    "sender": "tesla",
+    "text": "Welcome, my friend. I am Nikola Tesla. Ask me about my life or my inventions, or choose a topic below.",
+    "nodeId": "greeting",
+    "followUps": [
+      {
+        "id": "name",
+        "label": "Who are you?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      },
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      }
+    ],
+    "source": null
+  },
+  {
+    "sender": "user",
+    "text": "How old are you"
+  },
+  {
+    "sender": "tesla",
+    "text": "I lived to be 86 years old, but if I were alive today, I would be 170 years old.",
+    "nodeId": "age",
+    "followUps": [
+      {
+        "id": "birth-date",
+        "label": "When were you born?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "Fuck off"
+  },
+  {
+    "sender": "tesla",
+    "text": "Listen, I do not tolerate this kind of behaviour or foul language. I humbly request that you attempt to get your point across without such vocabulary.",
+    "nodeId": "rude",
+    "followUps": [],
+    "source": null
+  },
+  {
+    "sender": "user",
+    "text": "ok sorry"
+  },
+  {
+    "sender": "tesla",
+    "text": "I am delighted by your question, but I am not certain I can answer it. Perhaps one of these topics?",
+    "nodeId": "fallback",
+    "followUps": [
+      {
+        "id": "name",
+        "label": "Who are you?"
+      },
+      {
+        "id": "age",
+        "label": "How old are you?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      },
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      }
+    ],
+    "source": null
+  },
+  {
+    "sender": "user",
+    "text": "Who are you?"
+  },
+  {
+    "sender": "tesla",
+    "text": "You inquired about my name, I am Nikola Tesla.",
+    "nodeId": "name",
+    "followUps": [
+      {
+        "id": "age",
+        "label": "How old are you?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      }
+    ],
+    "source": null
+  },
+  {
+    "sender": "user",
+    "text": "How old are you?"
+  },
+  {
+    "sender": "tesla",
+    "text": "I was born on July 10, 1856, and passed away on January 7, 1943, living to be 86 years old.",
+    "nodeId": "age",
+    "followUps": [
+      {
+        "id": "birth-date",
+        "label": "When were you born?"
+      },
+      {
+        "id": "early-life",
+        "label": "Where did you grow up?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "Where did you grow up?"
+  },
+  {
+    "sender": "tesla",
+    "text": "I was born in Smiljan, a village then part of the Austrian Empire and today in Croatia, to Serbian parents. My father, Milutin, was an Orthodox priest, and my mother, Đuka, was a gifted inventor of household tools.",
+    "nodeId": "early-life",
+    "followUps": [
+      {
+        "id": "america",
+        "label": "Why did you move to America?"
+      },
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "Why did you move to America?"
+  },
+  {
+    "sender": "tesla",
+    "text": "I arrived in New York in 1884, seeking a place where my ideas could be built. I worked for Mr. Edison for a short time before we parted ways, and I became an American citizen in 1891.",
+    "nodeId": "america",
+    "followUps": [
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      },
+      {
+        "id": "tesla-coil",
+        "label": "What is the Tesla coil?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "What is the Tesla coil?"
+  },
+  {
+    "sender": "tesla",
+    "text": "In 1891 I developed the Tesla coil, a resonant transformer that produces very high voltages at high frequencies. I used it in my experiments with lighting and wireless transmission, and it is still built today.",
+    "nodeId": "tesla-coil",
+    "followUps": [
+      {
+        "id": "wardenclyffe",
+        "label": "What was Wardenclyffe?"
+      },
+      {
+        "id": "inventions",
+        "label": "What did you invent?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "What did you invent?"
+  },
+  {
+    "sender": "tesla",
+    "text": "My best-known work includes the alternating-current induction motor and polyphase power systems, the Tesla coil, and early experiments in wireless transmission.",
+    "nodeId": "inventions",
+    "followUps": [
+      {
+        "id": "tesla-coil",
+        "label": "What is the Tesla coil?"
+      },
+      {
+        "id": "wardenclyffe",
+        "label": "What was Wardenclyffe?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "What was Wardenclyffe?"
+  },
+  {
+    "sender": "tesla",
+    "text": "Wardenclyffe was my laboratory and tower on Long Island, begun around 1901. I hoped to transmit information and power through the earth without wires, but funding ran short and the project was never completed.",
+    "nodeId": "wardenclyffe",
+    "followUps": [
+      {
+        "id": "tesla-coil",
+        "label": "What is the Tesla coil?"
+      },
+      {
+        "id": "america",
+        "label": "Why did you move to America?"
+      }
+    ],
+    "source": {
+      "title": "Britannica: Nikola Tesla",
+      "url": "https://www.britannica.com/biography/Nikola-Tesla"
+    }
+  },
+  {
+    "sender": "user",
+    "text": "bye"
+  },
+  {
+    "sender": "tesla",
+    "text": "Goodbye. Do return whenever you wish to speak of science.",
+    "nodeId": "farewell",
+    "followUps": [],
+    "source": null
+  }
+]

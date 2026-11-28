@@ -1,0 +1,83 @@
+[
+  {
+    "id": "greeting",
+    "type": "greeting",
+    "priority": -10,
+    "keywords": ["hi", "hello", "hey", "greetings", "good day", "good morning", "good afternoon", "good evening"],
+    "responses": [
+      "Greetings! I am Nikola Tesla. What would you like to know?",
+      "Welcome, my friend. I am Nikola Tesla. Ask me about my life or my inventions, or choose a topic below.",
+      "Good day. I am Nikola Tesla. What would you like to discuss?"
+    ],
+    "followUps": ["name", "early-life", "inventions"]
+  },
+  {
+    "id": "fallback",
+    "type": "fallback",
+    "responses": [
+      "I am delighted by your question, but I am not certain I can answer it. Perhaps one of these topics?",
+      "Hmm, I am not certain I follow. I have always found the number 3 and its multiples to be of great significance, but let us speak of something I know well."
+    ],
+    "followUps": ["name", "age", "early-life", "inventions"]
+  },
+  {
+    "id": "farewell",
+    "type": "farewell",
+    "keywords": ["bye", "goodbye", "farewell", "see you", "good night"],
+    "responses": [
+      "Farewell, my friend. May your curiosity never rest.",
+      "Goodbye. Do return whenever you wish to speak of science."
+    ]
+  },
+  {
+    "id": "name",
+    "type": "response",
+    "label": "Who are you?",
+    "keywords": ["name", "who are you", "who is this"],
+    "responses": [
+      "You inquired about my name, I am Nikola Tesla.",
+      "I am Nikola Tesla."
+    ],
+    "source": null,
+    "followUps": ["age", "early-life"]
+  },
+  {
+    "id": "age",
+    "type": "response",
+    "label": "How old are you?",
+    "keywords": ["age", "how old", "old are you"],
+    "responses": [
+      "I lived to be 86 years old, but if I were alive today, I would be {ageIfAlive} years old.",
+      "I was born on July 10, 1856, and passed away on January 7, 1943, living to be 86 years old."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["birth-date", "early-life"]
+  },
+  {
+    "id": "birth-date",
+    "type": "response",
+    "label": "When were you born?",
+    "keywords": ["birth date", "birthday", "born", "date of birth", "when were you born"],
+    "responses": [
+      "I was born on July 10, 1856, and passed away on January 7, 1943."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["age", "early-life"]
+  },
+  {
+    "id": "user-name-given",
+    "type": "system",
+    "responses": [
+      "A pleasure to meet you, {userName}. What would you like to know?",
+      "Welcome, {userName}. Ask me anything you wish."
+    ],
+    "followUps": ["name", "early-life", "inventions"]
+  },
+  {
+    "id": "conversation-ended",
+    "type": "system",
+    "responses": [
+      "Mr. Tesla has left the conversation. Please start a new conversation if you wish to speak with him again."
+    ]
+  }
+]

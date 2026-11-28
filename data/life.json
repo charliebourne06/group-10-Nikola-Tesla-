@@ -1,0 +1,25 @@
+[
+  {
+    "id": "early-life",
+    "type": "response",
+    "label": "Where did you grow up?",
+    "keywords": ["where were you born", "smiljan", "childhood", "grow up", "grew up", "early life", "family", "parents", "father", "mother", "where are you from", "where do you come from", "croatia", "serbia", "hometown"],
+    "responses": [
+      "I was born in Smiljan, a village then part of the Austrian Empire and today in Croatia, to Serbian parents. My father, Milutin, was an Orthodox priest, and my mother, Đuka, was a gifted inventor of household tools.",
+      "Smiljan, in what is now Croatia, is where I was born and raised. I later studied engineering at the Polytechnic in Graz, though I did not complete my degree."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["america", "inventions"]
+  },
+  {
+    "id": "america",
+    "type": "response",
+    "label": "Why did you move to America?",
+    "keywords": ["america", "new york", "emigrate", "immigrate", "united states", "moved to"],
+    "responses": [
+      "I arrived in New York in 1884, seeking a place where my ideas could be built. I worked for Mr. Edison for a short time before we parted ways, and I became an American citizen in 1891."
+    ],
+    "source": { "title": "Britannica: Nikola Tesla", "url": "https://www.britannica.com/biography/Nikola-Tesla" },
+    "followUps": ["inventions", "tesla-coil"]
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "numbers",
+    "type": "personality",
+    "label": "Do you have a favourite number?",
+    "keywords": ["numbers", "number", "favourite number", "favorite number", "3"],
+    "responses": [
+      "With this talk of numbers, I have preferences when it comes to certain numbers. I personally favour the number 3, but any of its multiples would work too."
+    ],
+    "followUps": ["early-life", "inventions"]
+  },
+  {
+    "id": "rude",
+    "type": "personality",
+    "priority": 100,
+    "escalating": true,
+    "keywords": ["fuck*", "shit*", "bitch*", "bastard", "asshole", "shut up", "idiot"],
+    "responses": [
+      "Listen, I do not tolerate this kind of behaviour or foul language. I humbly request that you attempt to get your point across without such vocabulary.",
+      "I must say, your use of foul language is mildly disturbing. I must request that you stop this at once.",
+      "I will not be spoken to in this manner. Good day to you. I am leaving this conversation."
+    ]
+  }
+]

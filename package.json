@@ -11,7 +11,10 @@
   "description": "software engineering Nikola Tesla interactive conversational experience",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "dev": "node --watch main.js",
+    "validate": "node scripts/validate-data.js",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
