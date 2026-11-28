@@ -79,3 +79,9 @@ export function getTeslaReply(userText) {
 
   return "Ask me about my name, age, birth date, or numbers.";
 }
+
+export function getTeslaGreeting() {
+  const greetings = teslaEntries.filter((item) => item.type === "greeting");
+  const chosen = pickWeighted(greetings);
+  return chosen ? chosen.text : "Greetings. How may I assist you today?";
+}
