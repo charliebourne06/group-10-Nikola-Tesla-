@@ -4,19 +4,16 @@ import cors from "cors";
 import fs from "fs";
 import React from "react";
 import { renderToString } from "react-dom/server";
-import { getTeslaReply } from "./teslaEngine.js";
-
+import { getTeslaReply, getTeslaGreeting } from "./teslaEngine.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("."));
-fs.writeFileSync("./chat_history.json", "[]", "utf-8");
 // Serve files in the repo folder so /background.png loads in the browser
+app.use(express.static("."));
 
-
-// sets background image 
+// sets background image
 function TextBoxPage() {
   return React.createElement(
     "div",
@@ -52,7 +49,34 @@ function TextBoxPage() {
           gap: "12px"
         }
       },
-     React.createElement("div", {
+      React.createElement(
+        "div",
+        {
+          style: {
+            display: "flex",
+            justifyContent: "flex-end"
+          }
+        },
+        React.createElement(
+          "button",
+          {
+            id: "new-chat-btn",
+            type: "button",
+            style: {
+              padding: "6px 14px",
+              fontSize: "13px",
+              fontFamily: "sans-serif",
+              cursor: "pointer",
+              color: "#ffffff",
+              backgroundColor: "rgba(24, 168, 197, 0.35)",
+              border: "1px solid #29b6f6",
+              borderRadius: "14px"
+            }
+          },
+          "New Conversation"
+        )
+      ),
+      React.createElement("div", {
         id: "chat-history",
         style: {
           flex: 1,
@@ -122,6 +146,7 @@ function TextBoxPage() {
           const form = document.getElementById('chat-form');
           const input = document.getElementById('user-input');
           const historyBox = document.getElementById('chat-history');
+          const newChatBtn = document.getElementById('new-chat-btn');
 
           function scrollToBottom() {
             historyBox.scrollTop = historyBox.scrollHeight;
@@ -153,9 +178,27 @@ function TextBoxPage() {
           fetch('/api/history')
             .then((res) => res.json())
             .then((messages) => {
+              historyBox.innerHTML = '';
               messages.forEach((m) => showMessage(m.text, m.sender || 'user'));
               scrollToBottom();
             });
+
+          newChatBtn.addEventListener('click', async () => {
+            try {
+              const res = await fetch('/api/new-chat', { method: 'POST' });
+              if (!res.ok) {
+                console.error('New chat error:', res.status);
+                return;
+              }
+              const data = await res.json();
+              historyBox.innerHTML = '';
+              if (data && data.greeting) {
+                showMessage(data.greeting, 'tesla');
+              }
+            } catch (err) {
+              console.error('New chat request failed:', err);
+            }
+          });
 
           form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -188,13 +231,7 @@ function TextBoxPage() {
     })
   );
 }
-//gets the text box
-app.get("/", (req, res) => {
-  res.send(renderToString(React.createElement(TextBoxPage)));
-});
 
-
-//creates the text box
 function loadHistorySafe() {
   if (!fs.existsSync("./chat_history.json")) {
     fs.writeFileSync("./chat_history.json", "[]", "utf-8");
@@ -208,6 +245,16 @@ function loadHistorySafe() {
   const parsed = JSON.parse(raw);
   return Array.isArray(parsed) ? parsed : [];
 }
+
+// gets the text box
+app.get("/", (req, res) => {
+  res.send(renderToString(React.createElement(TextBoxPage)));
+});
+
+// creates the text box
+app.get("/chat", (req, res) => {
+  res.send(renderToString(React.createElement(TextBoxPage)));
+});
 
 // gets the chat history
 app.get("/api/history", (req, res) => {
@@ -252,6 +299,18 @@ app.post("/api/chat", (req, res) => {
   } catch (err) {
     console.error("Chat route error:", err);
     res.status(500).json({ error: "Failed to process chat message" });
+  }
+});
+
+app.post("/api/new-chat", (req, res) => {
+  try {
+    const greetingText = getTeslaGreeting();
+    const initialHistory = [{ sender: "tesla", text: greetingText }];
+    fs.writeFileSync("./chat_history.json", JSON.stringify(initialHistory, null, 2));
+    res.status(201).json({ greeting: greetingText, messages: initialHistory });
+  } catch (err) {
+    console.error("New chat error:", err);
+    res.status(500).json({ error: "Failed to start new conversation" });
   }
 });
 
